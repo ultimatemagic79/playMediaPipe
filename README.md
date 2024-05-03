@@ -1,7 +1,7 @@
 # MediaPipeを使ってみる
 本レポジトリではGoogle社が提供している[MediaPipe](https://developers.google.com/mediapipe)を使用し，自然言語処理，画像処理におけるAI技術を実際に動かしてみる．
 図1. MediaPipeのイメージ図
-![](mediapipe.png)
+![](image/mediapipe.png)
 
 ## 動作環境
 Google Colablatoryを使用して検証した．
@@ -181,7 +181,7 @@ def resize_and_show(image):
 image = cv2.imread("honey.jpg")
 resize_and_show(image)
 ```
-![](honey.jpg)
+![](image/honey.jpg)
 
 ```python
 import mediapipe as mp
@@ -213,7 +213,7 @@ dalmatian (0.49)
 image = cv2.imread("dalmatian.jpg")
 resize_and_show(image)
 ```
-![](dalmatian.jpg)
+![](image/dalmatian.jpg)
 ```python
 # 分類
 image = mp.Image.create_from_file("dalmatian.jpg")
@@ -300,7 +300,7 @@ annotated_image = visualize(image_copy, detection_result)
 rgb_annotated_image = cv2.cvtColor(annotated_image, cv2.COLOR_BGR2RGB)
 cv2_imshow(rgb_annotated_image)
 ```
-![](det_result.png)
+![](image/det_result.png)
 
 こちらは物体の位置自体は正しく認識することができているが，`dog`ではなく`bird`と認識されてしまった．
 ```python
